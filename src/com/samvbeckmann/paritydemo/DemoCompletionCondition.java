@@ -19,12 +19,12 @@ public class DemoCompletionCondition implements ICompletionCondition
     {
         double netOpinion = population.getAverageOpinion();
 
-        return netOpinion <= .05 || netOpinion >= .95;
+        return netOpinion <= .05 || netOpinion >= .95 || population.getTimestep() > 99;
     }
 
     @Override
     public String getName()
     {
-        return "Demo Completion Condition";
+        return "Basic Completion Condition";
     }
 }

@@ -11,12 +11,12 @@ import com.samvbeckmann.parity.core.Population;
  * @author Nate Beckemeyer & Sam Beckmann
  */
 @ParitySubscribe
-public class BasicAgent extends AbstractAgent
+public class DemoAgent extends AbstractAgent
 {
 
     DemoChoices prevChoice;
 
-    public BasicAgent()
+    public DemoAgent()
     {
         this(.5);
     }
@@ -24,17 +24,16 @@ public class BasicAgent extends AbstractAgent
     /**
      * @param startingOpinion Sets the starting opinion of the agent
      */
-    public BasicAgent(double startingOpinion)
+    public DemoAgent(double startingOpinion)
     {
         setOpinion(startingOpinion);
     }
 
     /**
-     * @param state The state of the agent in the interaction
      * @return The choice that the agent makes in the interaction
      */
     @Override
-    public DemoChoices interaction(Object state)
+    public DemoChoices interaction()
     {
         if (Population.rnd.nextDouble() > getOpinion())
             prevChoice = DemoChoices.LEFT;

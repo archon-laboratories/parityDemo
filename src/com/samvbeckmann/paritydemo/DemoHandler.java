@@ -15,9 +15,8 @@ import java.util.List;
 public class DemoHandler
 {
     /**
-     * Registers Interaction Handlers
-     *
-     * @return A list of classes of Interaction Handlers to be registered.
+     * Registers interaction handlers
+     * @return The list of interaction handlers
      */
     @ParitySubscribe.RegisterClasses(RegisterType.INTERACTION_HANDLER)
     public List<Class> registerInteractionHandlers()
@@ -28,9 +27,8 @@ public class DemoHandler
     }
 
     /**
-     * Registers Completion Conditions.
-     *
-     * @return A list of classes of Completion Conditions to be registered.
+     * Registers completion conditions
+     * @return The list of completion conditions
      */
     @ParitySubscribe.RegisterClasses(RegisterType.COMPLETION_CONDITION)
     public List<Class> registerCompletionConditions()
@@ -41,9 +39,8 @@ public class DemoHandler
     }
 
     /**
-     * Registers Agents.
-     *
-     * @return A list of classes of Agents to be registered.
+     * Registers agent types
+     * @return The list of agent types
      */
     @ParitySubscribe.RegisterClasses(RegisterType.AGENT)
     public List<Class> registerAgents()
