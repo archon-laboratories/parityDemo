@@ -1,18 +1,19 @@
 package com.samvbeckmann.paritydemo;
 
 import com.samvbeckmann.parity.core.*;
-import com.samvbeckmann.parity.demoProgram.BasicChoices;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * A sample implementation of {@link IInteractionHandler}.
  * Use/extend this, or make your own.
+ * @deprecated
  *
  * @author Nate Beckemeyer & Sam Beckmann
  */
-public class DemoInteractionHandler implements IInteractionHandler
+public class BasicInteractionHandler implements IInteractionHandler
 {
     public static final int POSITIVE_REWARD = 1;
     public static final int NEGATIVE_REWARD = -1;
@@ -73,7 +74,7 @@ public class DemoInteractionHandler implements IInteractionHandler
      * @param rowPlayer    The choice of the Row Player
      * @return If their actions align, reinforce the behavior (1). Else, discourage it. (-1)
      */
-    public int getColumnFeedback(BasicChoices columnPlayer, BasicChoices rowPlayer)
+    public int getColumnFeedback(Object columnPlayer, Object rowPlayer)
     {
         return columnPlayer == rowPlayer ? POSITIVE_REWARD : NEGATIVE_REWARD;
     }
@@ -83,7 +84,7 @@ public class DemoInteractionHandler implements IInteractionHandler
      * @param rowPlayer    The choice of the Row Player
      * @return If their actions align, reinforce the behavior (1). Else, discourage it. (-1)
      */
-    public int getRowFeedback(BasicChoices columnPlayer, BasicChoices rowPlayer)
+    public int getRowFeedback(Object columnPlayer, Object rowPlayer)
     {
         return getColumnFeedback(columnPlayer, rowPlayer);
     }
@@ -91,6 +92,6 @@ public class DemoInteractionHandler implements IInteractionHandler
     @Override
     public String getName()
     {
-        return "Demo Interaction Handler";
+        return "Basic Interaction Handler";
     }
 }
